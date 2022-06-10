@@ -1,0 +1,62 @@
+﻿@model List<Product>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <a class="btn btn-success" href="product/Add">Add Product</a>
+    <form action="#" method="get">
+        <input type="search" placeholder="search by Name" name="name" />
+        <input type="search" placeholder="search by category" name="categoryname" />
+        <input type="search" placeholder="search by price lower than" name="price" />
+      
+        <button type="submit" class="btn btn-default">search</button>
+
+    </form>
+
+    @foreach (var item in Model)
+    {
+        <div class="container">
+
+            <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+                <!-- product -->
+                <div class="product-content product-wrap clearfix">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="product-image">
+                                <img src="~/@item.ProductImagePath" alt="194x228" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <div class="product-deatil">
+                                <h5 class="name">
+
+                                    @item.Name<br />
+
+                                    <span>@item.Category </span>
+
+                                </h5>
+                                <p class="price-container">
+                                    <span>@item.Price tomans</span>
+                                </p>
+                                <span class="tag1"></span>
+                                <a href="~/product/delete/@item.ProductId" class="btn btn-danger">delete</a>
+                                <a href="~/product/edit/@item.ProductId" class="btn btn-warning">edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end product -->
+            </div>
+
+        </div>
+
+
+
+
+
+    }
+
+</body>
+</html>
